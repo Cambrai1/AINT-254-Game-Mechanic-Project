@@ -15,7 +15,7 @@ namespace ISS
         public Rigidbody rb;
         public float speed = 10.0f;
         public int moveSpeed = 10;
-        // Use this for initialization
+        public bool grounded = true;
 
         void Start()
         {
@@ -26,36 +26,40 @@ namespace ISS
         // Update is called once per frame
         void Update()
         {
-            
+
+
             float rotY = m_transform.rotation.eulerAngles.y;
 
-            m_transform.rotation = Quaternion.Euler(new Vector3(0.0f, rotY + m_rotationSpeed * 
+            m_transform.rotation = Quaternion.Euler(new Vector3(0.0f, rotY + m_rotationSpeed *
                 Input.GetAxis("Horizontal") * Time.deltaTime, 0.0f));
 
-           m_transform.position += m_transform.forward * m_speed * Input.GetAxis("Vertical") * Time.deltaTime;
+            m_transform.position += m_transform.forward * m_speed * Input.GetAxis("Vertical") * Time.deltaTime;
 
-            if (Input.GetKeyDown("space"))
+
+            if (Input.GetKeyDown("space") && grounded == true)
+            {
+
                 rb.velocity = new Vector3(rb.velocity.x, 10, rb.velocity.z);
+                grounded = false;
+                yield WaitForSeconds(3);
+                grounded = true;
+                StartCouroutine(groundedReset());
 
-            //if (Input.GetKeyDown("w"))
-            //rb.velocity = new Vector3(5, rb.velocity.y, rb.velocity.z);
-            //if (Input.GetKey(KeyCode.W))
-            //{
-                //transform.position += (Vector3.forward * moveSpeed * Time.deltaTime);
-            //}
-            //if (Input.GetKey(KeyCode.S))
-           //{
-                //transform.position += (Vector3.back * moveSpeed * Time.deltaTime);
-          //}
-            //if (Input.GetKeyDown("a"))
-                //rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, 5);
+                
 
-            //if (Input.GetKeyDown("d"))
-               // rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, -5);
+                
+            }
 
+            
         }
-   
     }
+}       
 
-}
+
+        
+         
+
+
+
+
 
