@@ -15,7 +15,10 @@ namespace ISS
         public Rigidbody rb;
         public float speed = 10.0f;
         public int moveSpeed = 10;
-        public bool grounded = true;
+        public float downTime, upTime, power;
+
+
+        Vector3 down = new Vector3(0, -1, 0);
 
         void Start()
         {
@@ -26,10 +29,11 @@ namespace ISS
         // Update is called once per frame
         void Update()
         {
-            if (rb.velocity.y < -2 && grounded == false)
-            {
-                grounded = true;
-            } 
+            //if (rb.velocity.y < -2 && grounded == false)
+            //{
+            //    grounded = true;
+            //}
+
 
             float rotY = m_transform.rotation.eulerAngles.y;
 
@@ -38,14 +42,28 @@ namespace ISS
 
             m_transform.position += m_transform.forward * m_speed * Input.GetAxis("Vertical") * Time.deltaTime;
 
-
-            if (Input.GetKeyDown("space") && grounded == true)
+            if (Input.GetKeyDown("space"))
             {
+                downTime = Time.time;
+            }
 
-                rb.velocity = new Vector3(rb.velocity.x, 10, rb.velocity.z);
-                grounded = false;
 
-                Debug.Log(Time.time - Time.time);
+
+            if (Input.GetKeyUp("space"))
+            {
+                upTime = Time.time;
+                power = ((upTime - downTime) * 6);
+
+                Debug.DrawRay(transform.position, down, Color.red, 5);
+                if (Physics.Raycast(transform.position, down, 2))
+                {
+
+                    rb.velocity = new Vector3(rb.velocity.x, power, rb.velocity.z);
+
+                    Debug.Log(Time.time);
+
+                }
+
             }
 
             
