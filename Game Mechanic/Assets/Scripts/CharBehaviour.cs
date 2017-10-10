@@ -26,7 +26,10 @@ namespace ISS
         // Update is called once per frame
         void Update()
         {
-
+            if (rb.velocity.y < -2 && grounded == false)
+            {
+                grounded = true;
+            } 
 
             float rotY = m_transform.rotation.eulerAngles.y;
 
@@ -41,13 +44,8 @@ namespace ISS
 
                 rb.velocity = new Vector3(rb.velocity.x, 10, rb.velocity.z);
                 grounded = false;
-                yield WaitForSeconds(3);
-                grounded = true;
-                StartCouroutine(groundedReset());
 
-                
-
-                
+                Debug.Log(Time.time - Time.time);
             }
 
             
