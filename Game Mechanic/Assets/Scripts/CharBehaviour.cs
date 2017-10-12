@@ -10,7 +10,7 @@ namespace ISS
         private float m_speed = 10.0f;
 
         [SerializeField]
-        private float m_rotationSpeed = 50.0f;
+        private float m_rotationSpeed = 100.0f;
 
         [SerializeField]
         private Slider slider;
@@ -44,11 +44,35 @@ namespace ISS
 
             float rotY = m_transform.rotation.eulerAngles.y;
 
-            //m_transform.rotation = Quaternion.Euler(new Vector3(0.0f, rotY + m_rotationSpeed *
-            //Input.GetAxis("Horizontal") * Time.deltaTime, 0.0f));
-            m_transform.position += m_transform.right * m_speed * Input.GetAxis("Horizontal") * Time.deltaTime;
+            if (Input.GetKey("w"))
+            {
+                m_transform.position += m_transform.forward * m_speed * Time.deltaTime;
+            }
 
-            m_transform.position += m_transform.forward * m_speed * Input.GetAxis("Vertical") * Time.deltaTime;
+            if (Input.GetKey("s"))
+            {
+                m_transform.position -= m_transform.forward * m_speed * Time.deltaTime;
+            }
+
+            if (Input.GetKey("a"))
+            {
+                m_transform.position -= m_transform.right * m_speed * Time.deltaTime;
+            }
+
+            if (Input.GetKey("d"))
+            {
+                m_transform.position += m_transform.right * m_speed * Time.deltaTime;
+            }
+            
+            if (Input.GetKey("left"))
+            {
+                m_transform.rotation = Quaternion.Euler(new Vector3(0.0f, rotY - m_rotationSpeed * Time.deltaTime, 0.0f));
+            }
+
+            if (Input.GetKey("right"))
+            {
+                m_transform.rotation = Quaternion.Euler(new Vector3(0.0f, rotY + m_rotationSpeed * Time.deltaTime, 0.0f));
+            }
 
             if (Input.GetKeyDown("space"))
             {
@@ -62,7 +86,6 @@ namespace ISS
                 slider.value = power;
             }
 
-           
             if (Input.GetKeyUp("space"))
             {             
                 Debug.DrawRay(transform.position, down, Color.red, 5);
