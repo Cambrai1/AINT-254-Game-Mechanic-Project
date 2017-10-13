@@ -1036,8 +1036,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f852e4b39448dbd46939cccf88908093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_mixer: {fileID: 24100000, guid: c6b22a4415a47654db214fe91b2ac85e, type: 2}
-  m_SoundManager: {fileID: 610374236}
+  m_mixer: {fileID: 0}
+  m_SoundManager: {fileID: 0}
 --- !u!225 &504687557
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1192,9 +1192,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2dfd6d7a733c6349bd18d60e143c04f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Gamemode: {fileID: 24500006, guid: c6b22a4415a47654db214fe91b2ac85e, type: 2}
-  m_Menumode: {fileID: 245990115467226348, guid: c6b22a4415a47654db214fe91b2ac85e,
-    type: 2}
+  m_Gamemode: {fileID: 0}
+  m_Menumode: {fileID: 0}
 --- !u!4 &610374237
 Transform:
   m_ObjectHideFlags: 0
@@ -1695,6 +1694,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1618377828 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000013437868696, guid: 56026a6f985650d41a6e1aff5a95e532,
+    type: 2}
+  m_PrefabInternal: {fileID: 1881437239}
+--- !u!114 &1618377833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1618377828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1ea680c8f5556040a6a28068c84cb6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_speed: 5
+  m_rotationSpeed: 100
+  m_player: {fileID: 1659493377}
+  rb: {fileID: 0}
 --- !u!1 &1630364791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1766,6 +1785,11 @@ CanvasRenderer:
 --- !u!1 &1659493372 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000010521618294, guid: 56026a6f985650d41a6e1aff5a95e532,
+    type: 2}
+  m_PrefabInternal: {fileID: 1881437239}
+--- !u!4 &1659493377 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4000011137779300, guid: 56026a6f985650d41a6e1aff5a95e532,
     type: 2}
   m_PrefabInternal: {fileID: 1881437239}
 --- !u!82 &1659493378
@@ -2179,7 +2203,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010717820586, guid: 56026a6f985650d41a6e1aff5a95e532, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000010717820586, guid: 56026a6f985650d41a6e1aff5a95e532, type: 2}
       propertyPath: m_LocalPosition.y
