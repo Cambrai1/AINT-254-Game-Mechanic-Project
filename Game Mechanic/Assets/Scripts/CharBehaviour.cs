@@ -37,7 +37,7 @@ namespace ISS
         // Update is called once per frame
         void Update()
         {
-
+            
             
 
             image.enabled = !(slider.value == 10);
