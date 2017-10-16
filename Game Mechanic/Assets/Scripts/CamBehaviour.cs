@@ -48,12 +48,12 @@ namespace ISS
 
             if (Input.GetKey("left"))
             {
-                m_player.rotation = Quaternion.Euler(new Vector3(0.0f, rotY + m_rotationSpeed * Time.deltaTime, 0.0f));
+                m_player.rotation = Quaternion.Euler(new Vector3(0.0f, rotY - m_rotationSpeed * Time.deltaTime, 0.0f));
             }
 
             if (Input.GetKey("right"))
             {
-                m_player.rotation = Quaternion.Euler(new Vector3(0.0f, rotY - m_rotationSpeed * Time.deltaTime, 0.0f));
+                m_player.rotation = Quaternion.Euler(new Vector3(0.0f, rotY + m_rotationSpeed * Time.deltaTime, 0.0f));
             }
         }
     }
