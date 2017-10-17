@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 namespace ISS
 {
@@ -31,10 +32,11 @@ namespace ISS
             rb = GetComponent<Rigidbody>();
         }
 
+        
         // Update is called once per frame
         void Update()
         {
-            
+
             
 
             image.enabled = !(slider.value == 10);
@@ -84,6 +86,15 @@ namespace ISS
                     slider.value = 10;
                 }
             }
+        }
+
+        void OnCollisionEnter(Collision Sphere)
+        {
+            if (Sphere.gameObject.tag == "Sphere")
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+            
         }
     }
 }       
