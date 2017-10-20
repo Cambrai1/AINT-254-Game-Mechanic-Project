@@ -41,23 +41,24 @@ namespace ISS
 
             image.enabled = !(slider.value == 10);
 
-            //if statement for W key press.
-            if (Input.GetKey("w"))
-            {
-                //if statement that increases the capsule character's forward velocity by 3x the standard movement speed
-                //when the left shift key and the W key is held down.
-                if (Input.GetKey("left shift"))
+                //if statement for W key press.
+                if (Input.GetKey("w"))
                 {
-                    m_transform.position += m_transform.forward * m_speed * Time.deltaTime * 3.0f;
+                    //if statement that increases the capsule character's forward velocity by 3x the standard movement speed
+                    //when the left shift key and the W key is held down.
+                    if (Input.GetKey("left shift"))
+                    {
+                        m_transform.position += m_transform.forward * m_speed * Time.deltaTime * 3.0f;
+                    }
+                    //else statement that increases the capsule character's forward velocity by just the standard movement speed
+                    //when just the W key is held down.
+                    else
+                    {
+                        m_transform.position += m_transform.forward * m_speed * Time.deltaTime;
+                    }
                 }
-                //else statement that increases the capsule character's forward velocity by just the standard movement speed
-                //when just the W key is held down.
-                else
-                {
-                    m_transform.position += m_transform.forward * m_speed * Time.deltaTime;
-                }
-            }
-
+            
+             
             //if statement for S key press.
             if (Input.GetKey("s"))
             {
