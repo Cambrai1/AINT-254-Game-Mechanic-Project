@@ -30,22 +30,11 @@ namespace ISS
         void Update()
         {
             float rotY = m_player.rotation.eulerAngles.y;
-            //Debug.Log(m_transform.localPosition.z);
+           
 
             var distance = Vector3.Distance(m_transform.position, m_player.position);
             Debug.Log(distance);
-
-            //if (Input.GetKey("down") && (distance < 5))
-            //{
-              //  m_transform.localPosition -= m_transform.forward * m_speed * Time.deltaTime;
-                //distance += m_transform.forward * m_speed * Time.deltaTime;
-            //}
-
-            //if (Input.GetKey("up") && (distance > 1))
-            //{
-              //  m_transform.localPosition += m_transform.forward * m_speed * Time.deltaTime;
-            //}
-
+            
             if (Input.GetKey("left"))
             {
                 m_player.rotation = Quaternion.Euler(new Vector3(0.0f, rotY - m_rotationSpeed * Time.deltaTime, 0.0f));
