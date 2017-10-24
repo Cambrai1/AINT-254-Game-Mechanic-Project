@@ -3,25 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CamCanvasScript : MonoBehaviour {
+namespace ISS
+{
+    public class CamCanvasScript : MonoBehaviour
+    {
 
-    public int currentHeight;
-    public int bestHeight;
-	// Use this for initialization
-	void Start () {
-        currentHeight = 10;
-        bestHeight = 10;
-	}
-    [SerializeField]
-    private Text m_text;
-	void Update () {
-
-        if (currentHeight >= bestHeight)
+        private static float currentHeight;
+        private static float bestHeight;
+        // Use this for initialization
+        void Start()
         {
-            bestHeight = currentHeight;
 
         }
+        [SerializeField]
+        private Text m_text;
 
-       m_text.text = ("Best Height:" + bestHeight.ToString() + "\nCurrent Height:" + currentHeight.ToString());
+        [SerializeField]
+        private Rigidbody rb;
+
+        void Update()
+        {
+            currentHeight = GameObject.Find("Character").GetComponent<CharBehaviour>().heightY;
+
+            if (currentHeight >= bestHeight)
+            {
+                bestHeight = currentHeight;
+
+            }
+
+            m_text.text = ("Best Height:" + bestHeight.ToString("0.00") + "\nCurrent Height:" + currentHeight.ToString("0.00"));
+        }
     }
 }
+

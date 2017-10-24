@@ -23,9 +23,9 @@ namespace ISS
         public float downTime, upTime, power;
         public float minJump = 10;
         public float maxJump = 20;
-        
-        Vector3 down = new Vector3(0, -1, 0);
+        public float heightY;
 
+        Vector3 down = new Vector3(0, -1, 0);
         void Start()
         {
             m_transform = GetComponent<Transform>();
@@ -36,9 +36,9 @@ namespace ISS
         // Update is called once per frame
         void Update()
         {
+            heightY = transform.position.y;
 
-            
-
+            print(heightY);
             image.enabled = !(slider.value == 10);
 
                 //if statement for W key press.
