@@ -165,6 +165,7 @@ namespace ISS
             if (Sphere.gameObject.tag == "Sphere")
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
             }
             
         }

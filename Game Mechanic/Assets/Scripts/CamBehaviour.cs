@@ -31,7 +31,6 @@ namespace ISS
         {
             float rotY = m_player.rotation.eulerAngles.y;
            
-
             var distance = Vector3.Distance(m_transform.position, m_player.position);
             Debug.Log(distance);
             
