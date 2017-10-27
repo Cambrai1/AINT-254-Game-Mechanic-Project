@@ -8,7 +8,7 @@ namespace ISS
     public class CharBehaviour : MonoBehaviour
     {
         [SerializeField]
-        private float m_speed = 10.0f;
+        private float m_speed = 20.0f;
 
         [SerializeField]
         private Slider slider;
@@ -48,13 +48,13 @@ namespace ISS
                     //when the left shift key and the W key is held down.
                     if (Input.GetKey("left shift"))
                     {
-                        m_transform.position += m_transform.forward * m_speed * Time.deltaTime * 3.0f;
+                        rb.velocity += m_transform.forward * m_speed * Time.deltaTime * 3.0f;
                     }
                     //else statement that increases the capsule character's forward velocity by just the standard movement speed
                     //when just the W key is held down.
                     else
                     {
-                        m_transform.position += m_transform.forward * m_speed * Time.deltaTime;
+                        rb.velocity += m_transform.forward * m_speed * Time.deltaTime;
                     }
                 }
             
@@ -66,13 +66,13 @@ namespace ISS
                 //when the left shift key and the S key is held down.
                 if (Input.GetKey("left shift"))
                 {
-                    m_transform.position -= m_transform.forward * m_speed * Time.deltaTime * 3.0f;
+                    rb.velocity -= m_transform.forward * m_speed * Time.deltaTime * 3.0f;
                 }
                 //else statement that decreases the capsule character's forward velocity by just the standard movement speed
                 //when just the W key is held down.
                 else
                 {
-                    m_transform.position -= m_transform.forward * m_speed * Time.deltaTime;
+                    rb.velocity -= m_transform.forward * m_speed * Time.deltaTime;
                 }
             }
             
@@ -83,13 +83,13 @@ namespace ISS
                 //when the left shift key and the A key is held down.
                 if (Input.GetKey("left shift"))
                 {
-                    m_transform.position -= m_transform.right * m_speed * Time.deltaTime * 3.0f;
+                    rb.velocity -= m_transform.right * m_speed * Time.deltaTime * 3.0f;
                 }
                 //else statement that decreases the capsule character's right velocity by just the standard movement speed
                 //when just the A key is held down.
                 else
                 {
-                    m_transform.position -= m_transform.right * m_speed * Time.deltaTime;
+                    rb.velocity -= m_transform.right * m_speed * Time.deltaTime;
                 }
             }
 
@@ -100,13 +100,13 @@ namespace ISS
                 //when the left shift key and the D key is held down.
                 if (Input.GetKey("left shift"))
                 {
-                    m_transform.position += m_transform.right * m_speed * Time.deltaTime * 3.0f;
+                    rb.velocity += m_transform.right * m_speed * Time.deltaTime * 3.0f;
                 }
                 //else statement that increases the capsule character's right velocity by just the standard movement speed
                 //when just the D key is held down.
                 else
                 {
-                    m_transform.position += m_transform.right * m_speed * Time.deltaTime;
+                    rb.velocity += m_transform.right * m_speed * Time.deltaTime;
                 }
             }
             
@@ -165,10 +165,10 @@ namespace ISS
             if (Sphere.gameObject.tag == "Sphere")
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
             }
             
         }
+
     }
 }       
 
