@@ -16,9 +16,6 @@ namespace ISS
         [SerializeField]
         private Image image;
 
-        [SerializeField]
-        Transform UIPanel;
-
         private Transform m_transform;
         public Rigidbody rb;
         public float speed = 10.0f;
@@ -35,11 +32,14 @@ namespace ISS
             rb = GetComponent<Rigidbody>();
         }
 
-        
         // Update is called once per frame
         void Update()
         {
-            heightY = transform.position.y;
+            if (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY < 0)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+                heightY = transform.position.y;
 
             image.enabled = !(slider.value == 10);
 
@@ -144,22 +144,6 @@ namespace ISS
                 }
             }
 
-            ////if statement for ESCAPE key press.
-            //if (Input.GetKeyDown("escape"))
-            //{
-
-            //    //pauses the games timeScale between 0 and 1 every time the ESCAPE key is pressed.
-            //    if (Time.timeScale == 1)
-            //    {
-            //        Time.timeScale = 0;
-            //        UIPanel.gameObject.SetActive(true);
-            //    }
-            //    else
-            //    {
-            //        Time.timeScale = 1;
-            //        UIPanel.gameObject.SetActive(false);
-            //    }
-            //}
         }
 
         //reloads the scene everytime the capsule character collides with a game object with the tag "Sphere".
@@ -168,8 +152,6 @@ namespace ISS
             if (Sphere.gameObject.tag == "Sphere")
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-                Time.timeScale = 0;
-                UIPanel.gameObject.SetActive(true);
             }
             
         }
