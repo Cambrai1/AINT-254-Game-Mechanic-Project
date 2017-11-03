@@ -10,8 +10,8 @@ public class Group : MonoBehaviour
     void Start()
     {
         m_group = GetComponent<CanvasGroup>();
-
-        m_group.alpha = 0;
+        Time.timeScale = 0;
+        //m_group.alpha = 0;
     }
 
     [SerializeField]
@@ -28,18 +28,18 @@ public class Group : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-	    if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            if(m_group.alpha == 0)
-            {
-                m_group.alpha = 1;
-                m_SoundManager.Menumode();
-            }
-            else
-            {
-                m_group.alpha = 0;
-                m_SoundManager.Gamemode();
-            }
-        }
+	    //if(Input.GetKeyDown(KeyCode.Escape))
+     //   {
+     //       if(m_group.alpha == 0)
+     //       {
+     //           m_group.alpha = 1;
+     //           //m_SoundManager.Menumode();
+     //       }
+     //       else
+     //       {
+     //           m_group.alpha = 0;
+     //           //m_SoundManager.Gamemode();
+     //       }
+     //   }
 	}
 }

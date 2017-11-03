@@ -1378,7 +1378,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 360.35, y: -179.61}
+  m_AnchoredPosition: {x: 10.6, y: -179.61}
   m_SizeDelta: {x: 250.8, y: 89.34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &116318074
@@ -14825,8 +14825,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 361, y: 48.48}
-  m_SizeDelta: {x: 249.5, y: 347.24}
+  m_AnchoredPosition: {x: 392.36, y: 0.93}
+  m_SizeDelta: {x: 312.23, y: 442.35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1541896915
 MonoBehaviour:
@@ -14861,7 +14861,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "<color=blue>Controls:</color> \n\nWASD to move\n\nArrow Keys to turn\n\nHold
-    Space to Power Jump\n\nEscape to open + close menu!\n"
+    Shift to sprint\n\nHold Space to Power Jump\n\nEscape to open + close menu!\n\n\n"
 --- !u!222 &1541896916
 CanvasRenderer:
   m_ObjectHideFlags: 0
