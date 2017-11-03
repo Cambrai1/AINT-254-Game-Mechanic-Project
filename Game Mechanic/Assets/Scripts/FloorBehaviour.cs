@@ -27,7 +27,6 @@ namespace ISS
             {
                 Destroy(Sphere.gameObject);
                 SpawnSphere();
-                SpawnSphere();
             }
 
         }
