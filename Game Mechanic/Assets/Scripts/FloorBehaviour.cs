@@ -27,7 +27,7 @@ namespace ISS
             {
                 Destroy(Sphere.gameObject);
                 SpawnSphere();
-                //Instantiate(Sphere, 0.0.0 , Quaternion.identity);
+                SpawnSphere();
             }
 
         }
@@ -39,7 +39,8 @@ namespace ISS
                 Vector3 newPos = new Vector3(Random.Range(-26, 29), 100, Random.Range(-28, 60));
                 GameObject octo = Instantiate(SpherePre, newPos, Quaternion.identity) as GameObject;
             }
-            else if (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY >= 30)
+
+            else if (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY >= 30 && GameObject.Find("Character").GetComponent<CharBehaviour>().heightY <= 110)
             {
                 Vector3 newPos = new Vector3(Random.Range(-130, 29), 125, Random.Range(-59, -37));
                 GameObject octo = Instantiate(SpherePre, newPos, Quaternion.identity) as GameObject;

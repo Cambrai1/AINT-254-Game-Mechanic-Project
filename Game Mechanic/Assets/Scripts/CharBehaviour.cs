@@ -16,6 +16,9 @@ namespace ISS
         [SerializeField]
         private Image image;
 
+        [SerializeField]
+        Transform UIPanel;
+
         private Transform m_transform;
         public Rigidbody rb;
         public float speed = 10.0f;
@@ -38,7 +41,6 @@ namespace ISS
         {
             heightY = transform.position.y;
 
-            print(heightY);
             image.enabled = !(slider.value == 10);
 
                 //if statement for W key press.
@@ -137,26 +139,27 @@ namespace ISS
                     //If it is greater, then the y axis velocity increases by the max jump value.
                     rb.velocity = new Vector3(rb.velocity.x, (power > maxJump) ? maxJump : power, rb.velocity.z);
 
-                    Debug.Log(power);
-
                     //sets the slider value back to its minimum.
                     slider.value = 10;
                 }
             }
 
-            //if statement for ESCAPE key press.
-            if (Input.GetKeyDown("escape"))
-            {
-                //pauses the games timeScale between 0 and 1 every time the ESCAPE key is pressed.
-                if (Time.timeScale == 1)
-                {
-                    Time.timeScale = 0;
-                }
-                else
-                {
-                    Time.timeScale = 1;
-                }
-            }
+            ////if statement for ESCAPE key press.
+            //if (Input.GetKeyDown("escape"))
+            //{
+
+            //    //pauses the games timeScale between 0 and 1 every time the ESCAPE key is pressed.
+            //    if (Time.timeScale == 1)
+            //    {
+            //        Time.timeScale = 0;
+            //        UIPanel.gameObject.SetActive(true);
+            //    }
+            //    else
+            //    {
+            //        Time.timeScale = 1;
+            //        UIPanel.gameObject.SetActive(false);
+            //    }
+            //}
         }
 
         //reloads the scene everytime the capsule character collides with a game object with the tag "Sphere".
@@ -165,6 +168,8 @@ namespace ISS
             if (Sphere.gameObject.tag == "Sphere")
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                Time.timeScale = 0;
+                UIPanel.gameObject.SetActive(true);
             }
             
         }
