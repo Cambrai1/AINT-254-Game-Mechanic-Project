@@ -9,6 +9,8 @@ namespace ISS
 
         public GameObject SpherePre;
 
+        private Transform m_transform;
+
         // Use this for initialization
         void Start()
         {
@@ -25,10 +27,18 @@ namespace ISS
         {
             if (Sphere.gameObject.tag == "Sphere")
             {
-                Destroy(Sphere.gameObject);
-                SpawnSphere();
+                //Destroy(Sphere.gameObject);
+                SpawnSphere();               
             }
 
+        }
+
+        void OnCollisionStay(Collision Sphere)
+        {
+            if (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY > 30)
+            {
+                Destroy(Sphere.gameObject);
+            }
         }
 
         private void SpawnSphere()
