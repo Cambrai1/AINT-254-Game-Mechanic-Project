@@ -7,6 +7,9 @@ namespace ISS
 {
     public class Manager : MonoBehaviour
     {
+        public Button RestartButton;
+
+        public float Restartbool = 1.0f;
 
         [SerializeField]
         Transform UIPanel;
@@ -16,8 +19,9 @@ namespace ISS
 
         void Start()
         {
-
+           
         }
+
         public void Pause()
         {
             UIPanel.gameObject.SetActive(true);
@@ -28,6 +32,7 @@ namespace ISS
         {
             UIPanel.gameObject.SetActive(false);
             Time.timeScale = 1;
+            Restartbool = 0;
         }
 
         public void Update()
@@ -43,6 +48,17 @@ namespace ISS
                     Pause();
                 }
             }
+
+            if (Restartbool == 1.0f)
+            {
+                RestartButton.interactable = false;
+            }
+
+            else
+            {
+                RestartButton.interactable = true;
+            }
+
         }
         public void QuitGame()
         {
@@ -53,6 +69,7 @@ namespace ISS
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             UnPause();
+            Restartbool = 1;
         }
     }
 }
