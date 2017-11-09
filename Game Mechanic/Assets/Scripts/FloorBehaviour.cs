@@ -28,7 +28,13 @@ namespace ISS
             if (Sphere.gameObject.tag == "Sphere")
             {
                 //Destroy(Sphere.gameObject);
-                SpawnSphere();               
+                SpawnSphere();
+
+                if (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY > 30)
+                {
+                    SpawnSphere();
+                }
+
             }
 
         }
