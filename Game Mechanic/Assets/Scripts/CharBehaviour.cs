@@ -153,7 +153,11 @@ namespace ISS
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
-            
+
+            if (Sphere.gameObject.tag == "NotSphere")
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }
 
     }

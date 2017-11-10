@@ -8,7 +8,7 @@ namespace ISS
     {
 
         public GameObject SpherePre;
-
+        public GameObject SpherePreSmall;
         private Transform m_transform;
 
         // Use this for initialization
@@ -30,9 +30,11 @@ namespace ISS
                 //Destroy(Sphere.gameObject);
                 SpawnSphere();
 
-                if (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY > 30)
+                Sphere.gameObject.tag = "NotSphere";
+
+                if (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY > 40)
                 {
-                    SpawnSphere();
+                    //SpawnSphere();
                 }
 
             }
@@ -49,22 +51,36 @@ namespace ISS
 
         private void SpawnSphere()
         {
-            if (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY < 30)
+
+            if (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY < 45)
             {
                 Vector3 newPos = new Vector3(Random.Range(-26, 29), 100, Random.Range(-28, 60));
-                GameObject octo = Instantiate(SpherePre, newPos, Quaternion.identity) as GameObject;
+                GameObject octo = Instantiate(SpherePreSmall, newPos, Quaternion.identity) as GameObject;
             }
 
-            else if (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY >= 30 && GameObject.Find("Character").GetComponent<CharBehaviour>().heightY <= 110)
+            else if (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY >= 45 && GameObject.Find("Character").GetComponent<CharBehaviour>().heightY <= 110)
             {
                 Vector3 newPos = new Vector3(Random.Range(-130, 29), 125, Random.Range(-59, -37));
-                GameObject octo = Instantiate(SpherePre, newPos, Quaternion.identity) as GameObject;
+                GameObject octo = Instantiate(SpherePreSmall, newPos, Quaternion.identity) as GameObject;
             }
 
             if (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY > 80)
             {
-                Vector3 newPos = new Vector3(Random.Range(-143, -38), 165, Random.Range(5, 80));
-                GameObject octo = Instantiate(SpherePre, newPos, Quaternion.identity) as GameObject;
+                
+                if (Random.Range(0f, 1f) > 0.5f)
+                {
+                    Vector3 newPos = new Vector3(Random.Range(-143, -38), 165, Random.Range(5, 80));
+                    GameObject octo = Instantiate(SpherePre, newPos, Quaternion.identity) as GameObject;
+                    Debug.Log("Red");
+                }
+
+                else
+                {
+                    Vector3 newPos = new Vector3(Random.Range(-143, -38), 165, Random.Range(5, 80));
+                    GameObject octo = Instantiate(SpherePreSmall, newPos, Quaternion.identity) as GameObject;
+                    Debug.Log("Blue");
+                }
+
             }
         }
     }
