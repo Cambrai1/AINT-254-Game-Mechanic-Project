@@ -8,13 +8,22 @@ namespace ISS
     public class CharBehaviour : MonoBehaviour
     {
         [SerializeField]
-        private float m_speed = 20.0f;
+        private float m_speedturn = 20.0f;
 
         [SerializeField]
         private Slider slider;
 
         [SerializeField]
+        private Transform m_player;
+
+        [SerializeField]
         private Image image;
+
+        [SerializeField]
+        private float m_speedmove = 20.0f;
+
+        [SerializeField]
+        private float m_rotationSpeed = 100.0f;
 
         private Transform m_transform;
         public Rigidbody rb;
@@ -50,13 +59,13 @@ namespace ISS
                     //when the left shift key and the W key is held down.
                     if (Input.GetKey("left shift"))
                     {
-                        rb.velocity += m_transform.forward * m_speed * Time.deltaTime * 3.0f;
+                        rb.velocity += m_transform.forward * m_speedmove * Time.deltaTime * 3.0f;
                     }
                     //else statement that increases the capsule character's forward velocity by just the standard movement speed
                     //when just the W key is held down.
                     else
                     {
-                        rb.velocity += m_transform.forward * m_speed * Time.deltaTime;
+                        rb.velocity += m_transform.forward * m_speedmove * Time.deltaTime;
                     }
                 }
             
@@ -68,13 +77,13 @@ namespace ISS
                 //when the left shift key and the S key is held down.
                 if (Input.GetKey("left shift"))
                 {
-                    rb.velocity -= m_transform.forward * m_speed * Time.deltaTime * 3.0f;
+                    rb.velocity -= m_transform.forward * m_speedmove * Time.deltaTime * 3.0f;
                 }
                 //else statement that decreases the capsule character's forward velocity by just the standard movement speed
                 //when just the W key is held down.
                 else
                 {
-                    rb.velocity -= m_transform.forward * m_speed * Time.deltaTime;
+                    rb.velocity -= m_transform.forward * m_speedmove * Time.deltaTime;
                 }
             }
             
@@ -85,13 +94,13 @@ namespace ISS
                 //when the left shift key and the A key is held down.
                 if (Input.GetKey("left shift"))
                 {
-                    rb.velocity -= m_transform.right * m_speed * Time.deltaTime * 3.0f;
+                    rb.velocity -= m_transform.right * m_speedmove * Time.deltaTime * 3.0f;
                 }
                 //else statement that decreases the capsule character's right velocity by just the standard movement speed
                 //when just the A key is held down.
                 else
                 {
-                    rb.velocity -= m_transform.right * m_speed * Time.deltaTime;
+                    rb.velocity -= m_transform.right * m_speedmove * Time.deltaTime;
                 }
             }
 
@@ -102,13 +111,13 @@ namespace ISS
                 //when the left shift key and the D key is held down.
                 if (Input.GetKey("left shift"))
                 {
-                    rb.velocity += m_transform.right * m_speed * Time.deltaTime * 3.0f;
+                    rb.velocity += m_transform.right * m_speedmove * Time.deltaTime * 3.0f;
                 }
                 //else statement that increases the capsule character's right velocity by just the standard movement speed
                 //when just the D key is held down.
                 else
                 {
-                    rb.velocity += m_transform.right * m_speed * Time.deltaTime;
+                    rb.velocity += m_transform.right * m_speedmove * Time.deltaTime;
                 }
             }
             
@@ -142,6 +151,18 @@ namespace ISS
                     //sets the slider value back to its minimum.
                     slider.value = 10;
                 }
+            }
+
+            float rotY = m_player.rotation.eulerAngles.y;
+
+            if (Input.GetKey("left"))
+            {
+                m_player.rotation = Quaternion.Euler(new Vector3(0.0f, rotY - m_rotationSpeed * Time.deltaTime, 0.0f));
+            }
+
+            if (Input.GetKey("right"))
+            {
+                m_player.rotation = Quaternion.Euler(new Vector3(0.0f, rotY + m_rotationSpeed * Time.deltaTime, 0.0f));
             }
 
         }
