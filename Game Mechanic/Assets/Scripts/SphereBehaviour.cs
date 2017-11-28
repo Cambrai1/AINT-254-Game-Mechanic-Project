@@ -6,50 +6,30 @@ namespace ISS
 {
     public class SphereBehaviour : MonoBehaviour
     {
-        public GameObject SpherePre;
+        public Transform Character;
+        public float speed = 1.0f;
+        private Vector3 directionOfCharacter;
+        private bool challenged = false;
 
-        // Use this for initialization
-        void Start()
-        {
-            
-        }
-
-        // Update is called once per frame
         void Update()
         {
-           
+            if (challenged)
+            {
+                directionOfCharacter = Character.transform.position - transform.position;
+                directionOfCharacter = directionOfCharacter.normalized;
+                transform.Translate(directionOfCharacter * speed, Space.World);
+            }
+
+            if (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY > 115)
+            {
+                challenged = true;
+            }
+
         }
 
-        //void OnCollisionEnter(Collision Plane1)
-        //{
-        //    if (SpherePre.gameObject.tag == "Sphere")
-        //    {
-        //        Destroy(SpherePre.gameObject);
-        //        SpawnSphere();
-        //    }
 
-        //}
 
-        //private void SpawnSphere()
-        //{
-        //    if (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY < 30)
-        //    {
-        //        Vector3 newPos = new Vector3(Random.Range(-26, 29), 100, Random.Range(-28, 60));
-        //        GameObject octo = Instantiate(SpherePre, newPos, Quaternion.identity) as GameObject;
-        //    }
 
-        //    else if (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY >= 30 && GameObject.Find("Character").GetComponent<CharBehaviour>().heightY <= 110)
-        //    {
-        //        Vector3 newPos = new Vector3(Random.Range(-130, 29), 125, Random.Range(-59, -37));
-        //        GameObject octo = Instantiate(SpherePre, newPos, Quaternion.identity) as GameObject;
-        //    }
-
-        //    if (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY > 80)
-        //    {
-        //        Vector3 newPos = new Vector3(Random.Range(-143, -38), 165, Random.Range(5, 80));
-        //        GameObject octo = Instantiate(SpherePre, newPos, Quaternion.identity) as GameObject;
-        //    }
-        //}
     }
 
 }
