@@ -2900,6 +2900,7 @@ GameObject:
   - component: {fileID: 204096591}
   - component: {fileID: 204096593}
   - component: {fileID: 204096592}
+  - component: {fileID: 204096586}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -2913,18 +2914,34 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 204096584}
-  m_LocalRotation: {x: -0.06286194, y: -0, z: -0, w: 0.99802226}
-  m_LocalPosition: {x: 0, y: 0, z: -31.919}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalRotation: {x: -0.009073728, y: -0, z: -0, w: 0.9999589}
+  m_LocalPosition: {x: 0, y: 0, z: -3}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 20
-  m_LocalEulerAnglesHint: {x: -7.208, y: 0, z: 0}
+  m_Father: {fileID: 389173323}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -1.0400001, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.723}
+  m_AnchoredPosition: {x: 0, y: 1.3359987}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &204096586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 204096584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1ea680c8f5556040a6a28068c84cb6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_speed: 3
+  m_rotationSpeed: 100
+  m_player: {fileID: 389173323}
+  m_camera: {fileID: 204096585}
+  rb: {fileID: 1640516449}
 --- !u!81 &204096587
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3007,7 +3024,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 204096584}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c559a3d17248fc4a9dbcc97548d035e, type: 3}
   m_Name: 
@@ -4986,7 +5003,8 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -30.54}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_Children: []
+  m_Children:
+  - {fileID: 204096585}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5657,7 +5675,7 @@ GameObject:
   - component: {fileID: 419317218}
   - component: {fileID: 419317217}
   m_Layer: 0
-  m_Name: Sphere (28)
+  m_Name: FollowSphere2
   m_TagString: Sphere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6415,7 +6433,7 @@ Transform:
   - {fileID: 933733496}
   - {fileID: 1960438179}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &479427396
 GameObject:
@@ -14397,7 +14415,7 @@ GameObject:
   - component: {fileID: 1137407360}
   - component: {fileID: 1137407359}
   m_Layer: 0
-  m_Name: Sphere (29)
+  m_Name: FollowSphere3
   m_TagString: Sphere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14767,7 +14785,7 @@ GameObject:
   - component: {fileID: 1153709259}
   - component: {fileID: 1153709258}
   m_Layer: 0
-  m_Name: Sphere (30)
+  m_Name: FollowSphere4
   m_TagString: Sphere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15303,7 +15321,7 @@ Transform:
   - {fileID: 566189543}
   - {fileID: 855814800}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1212152277
 GameObject:
@@ -19446,8 +19464,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "<color=blue>Controls:</color> \n\nWASD to move\n\nArrow Keys to turn\n\nHold
-    Shift to sprint\n\nHold Space to Power Jump\n\nEscape to open + close menu!\n\n\n"
+  m_Text: "<color=blue>Controls:</color> \n\nWASD to move\n\nArrow Keys to turn and
+    tilt the camera\n\nHold Shift to sprint\n\nHold Space to Power Jump\n\nEscape
+    to open + close menu!\n\n\n"
 --- !u!222 &1541896916
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19945,7 +19964,7 @@ Transform:
   - {fileID: 1137407358}
   - {fileID: 1153709257}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1594162170
 GameObject:
@@ -21438,7 +21457,7 @@ GameObject:
   - component: {fileID: 1750938519}
   - component: {fileID: 1750938518}
   m_Layer: 0
-  m_Name: Sphere (27)
+  m_Name: FollowSphere1
   m_TagString: Sphere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

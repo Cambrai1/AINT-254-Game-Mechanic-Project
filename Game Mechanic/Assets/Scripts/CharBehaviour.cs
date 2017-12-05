@@ -146,7 +146,7 @@ namespace ISS
                 {
                     //Increases the capsule character's y axis velocity by the value of the power variable as long as power is less than the value for the max jump variable.
                     //If it is greater, then the y axis velocity increases by the max jump value.
-                    rb.velocity = new Vector3(rb.velocity.x, (power > maxJump) ? maxJump : power, rb.velocity.z);
+                    rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y + ((power > maxJump) ? maxJump : power), rb.velocity.z);
 
                     //sets the slider value back to its minimum.
                     slider.value = 10;
