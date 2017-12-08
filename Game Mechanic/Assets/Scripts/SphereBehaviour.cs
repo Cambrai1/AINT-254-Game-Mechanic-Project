@@ -25,6 +25,15 @@ namespace ISS
                 challenged = true;
             }
 
+            if (Time.timeScale == 0)
+            {
+                speed = 0.0f;
+            }
+
+            if (Time.timeScale == 1)
+            {
+                speed = 0.2f;
+            }
         }
 
 
