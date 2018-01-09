@@ -27,7 +27,7 @@ namespace ISS
         {
             if (Sphere.gameObject.tag == "Sphere")
             {
-                //Destroy(Sphere.gameObject);
+                Destroy(Sphere.gameObject);
                 SpawnSphere();
 
                 Sphere.gameObject.tag = "NotSphere";
@@ -43,7 +43,7 @@ namespace ISS
 
         void OnCollisionStay(Collision Sphere)
         {
-            if (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY > 0)
+            if (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY < 0)
             {
                 Destroy(Sphere.gameObject);
             }
@@ -52,15 +52,15 @@ namespace ISS
         private void SpawnSphere()
         {
 
-            if (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY < 45)
+            if (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY < 20)
             {
                 Vector3 newPos = new Vector3(Random.Range(75, 116), 25, Random.Range(-235, -268));
                 GameObject octo = Instantiate(SpherePreSmall, newPos, Quaternion.identity) as GameObject;
             }
 
-            else if (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY >= 45 && GameObject.Find("Character").GetComponent<CharBehaviour>().heightY <= 110)
+            else if (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY >= 20 && GameObject.Find("Character").GetComponent<CharBehaviour>().heightY <= 110)
             {
-                Vector3 newPos = new Vector3(Random.Range(-130, 29), 125, Random.Range(-59, -37));
+                Vector3 newPos = new Vector3(Random.Range(-30, 2), 50, Random.Range(-200, -260));
                 GameObject octo = Instantiate(SpherePreSmall, newPos, Quaternion.identity) as GameObject;
             }
 
