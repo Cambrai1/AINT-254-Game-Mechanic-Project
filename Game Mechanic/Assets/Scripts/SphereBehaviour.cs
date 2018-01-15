@@ -20,9 +20,14 @@ namespace ISS
                 transform.Translate(directionOfCharacter * speed, Space.World);
             }
 
-            if (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY > 20)
+            if ((GameObject.Find("Character").GetComponent<CharBehaviour>().heightY > 20) && (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY < 75))
             {
                 challenged = true;
+            }
+
+            else
+            {
+                challenged = false;
             }
 
             if (Time.timeScale == 0)

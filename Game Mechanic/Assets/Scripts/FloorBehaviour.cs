@@ -9,7 +9,9 @@ namespace ISS
 
         public GameObject SpherePre;
         public GameObject SpherePreSmall;
+        public GameObject SphereNew;
         private Transform m_transform;
+        public float heightY;
 
         // Use this for initialization
         void Start()
@@ -20,7 +22,7 @@ namespace ISS
         // Update is called once per frame
         void Update()
         {
-
+            heightY = transform.position.y;
         }
 
         void OnCollisionEnter(Collision Sphere)
@@ -29,7 +31,7 @@ namespace ISS
             {
                 Destroy(Sphere.gameObject);
                 SpawnSphere();
-
+                SpawnSphere();
                 Sphere.gameObject.tag = "NotSphere";
 
                 if (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY > 0)
@@ -58,31 +60,20 @@ namespace ISS
                 GameObject octo = Instantiate(SpherePreSmall, newPos, Quaternion.identity) as GameObject;
             }
 
-            else if (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY >= 20 && GameObject.Find("Character").GetComponent<CharBehaviour>().heightY <= 110)
+            else if (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY >= 20 && GameObject.Find("Character").GetComponent<CharBehaviour>().heightY <= 75)
             {
                 Vector3 newPos = new Vector3(Random.Range(-30, 2), 50, Random.Range(-200, -260));
                 GameObject octo = Instantiate(SpherePreSmall, newPos, Quaternion.identity) as GameObject;
             }
 
-            if (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY > 80)
+            if (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY > 75)
             {
-                
-                if (Random.Range(0f, 1f) > 0.5f)
-                {
-                    Vector3 newPos = new Vector3(Random.Range(-143, -38), 165, Random.Range(5, 80));
-                    GameObject octo = Instantiate(SpherePre, newPos, Quaternion.identity) as GameObject;
-                    Debug.Log("Red");
-                }
-
-                else
-                {
-                    Vector3 newPos = new Vector3(Random.Range(-143, -38), 165, Random.Range(5, 80));
-                    GameObject octo = Instantiate(SpherePreSmall, newPos, Quaternion.identity) as GameObject;
-                    Debug.Log("Blue");
-                }
-
+                Vector3 newPos = new Vector3(Random.Range(-120, -85), 125, Random.Range(-195, -165));
+                GameObject octo = Instantiate(SphereNew, newPos, Quaternion.identity) as GameObject;
+                Debug.Log("Red");
             }
         }
     }
 }
+
 
