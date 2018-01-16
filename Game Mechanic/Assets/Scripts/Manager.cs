@@ -15,6 +15,9 @@ namespace ISS
         Transform UIPanel;
 
         [SerializeField]
+        Transform EndingPanel;
+
+        [SerializeField]
         Text timeText;
 
         void Start()
@@ -70,6 +73,18 @@ namespace ISS
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             UnPause();
             Restartbool = 1;
+            EndingPanel.gameObject.SetActive(false);
+        }
+
+        void OnCollisionEnter(Collision Sphere)
+        {
+            Ending();
+        }
+
+        public void Ending()
+        {
+            EndingPanel.gameObject.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 }

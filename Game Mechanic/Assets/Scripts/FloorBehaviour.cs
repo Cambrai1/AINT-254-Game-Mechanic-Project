@@ -31,7 +31,6 @@ namespace ISS
             {
                 Destroy(Sphere.gameObject);
                 SpawnSphere();
-                SpawnSphere();
                 Sphere.gameObject.tag = "NotSphere";
 
                 if (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY > 0)
@@ -66,11 +65,23 @@ namespace ISS
                 GameObject octo = Instantiate(SpherePreSmall, newPos, Quaternion.identity) as GameObject;
             }
 
-            if (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY > 75)
+            if ((GameObject.Find("Character").GetComponent<CharBehaviour>().heightY > 75) && (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY < 120))
             {
                 Vector3 newPos = new Vector3(Random.Range(-120, -85), 125, Random.Range(-195, -165));
                 GameObject octo = Instantiate(SphereNew, newPos, Quaternion.identity) as GameObject;
                 Debug.Log("Red");
+            }
+
+            if ((GameObject.Find("Character").GetComponent<CharBehaviour>().heightY > 75) && (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY < 170))
+            {
+                Vector3 newPos = new Vector3(Random.Range(-200, -90), 220, Random.Range(-210, -380));
+                GameObject octo = Instantiate(SphereNew, newPos, Quaternion.identity) as GameObject;
+            }
+
+            if ((GameObject.Find("Character").GetComponent<CharBehaviour>().heightY > 120) && (GameObject.Find("Character").GetComponent<CharBehaviour>().heightY < 170))
+            {
+                Vector3 newPos = new Vector3(Random.Range(-200, -90), 220, Random.Range(-210, -380));
+                GameObject octo = Instantiate(SphereNew, newPos, Quaternion.identity) as GameObject;
             }
         }
     }

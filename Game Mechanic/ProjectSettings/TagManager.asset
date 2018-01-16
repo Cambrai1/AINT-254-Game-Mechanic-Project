@@ -8,6 +8,7 @@ TagManager:
   - Floor
   - Plane1
   - NotSphere
+  - Ending
   layers:
   - Default
   - TransparentFX

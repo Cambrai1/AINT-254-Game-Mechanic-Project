@@ -619,20 +619,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Samuel Jones\Documents\GitHub\AINT-254-Game-Mechanic-Project\Game
     Mechanic
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 71}
-    m_SelectedIDs: 70260000
-    m_LastClickedID: 9840
-    m_ExpandedIDs: 0000000070260000e2260000ec260000f62600004027000042270000602700006e270000782700007a27000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 92270000
+    m_LastClickedID: 10130
+    m_ExpandedIDs: 0000000074260000e6260000f0260000fa260000442700004627000064270000722700007c2700007e27000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -660,7 +660,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000070260000e2260000ec260000f62600004027000042270000602700006e270000782700007a270000
+    m_ExpandedIDs: 0000000074260000e6260000f0260000fa260000442700004627000064270000722700007c2700007e270000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -775,24 +775,24 @@ MonoBehaviour:
     width: 200
     height: 475
   m_TreeViewState:
-    scrollPos: {x: 0, y: 480}
+    scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: f4fbffff1afcffff0000000074280000062b000026320000
+    m_ExpandedIDs: f2ecfcff4eb8fdff1afcffff00000000302b0000c4320000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Panel (1)
+      m_OriginalName: Panel (1)
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: -149426
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 4}
     m_SearchString: 
@@ -828,14 +828,14 @@ MonoBehaviour:
     width: 957
     height: 475
   m_SceneLighting: 1
-  lastFramingTime: 186.33451895839917
+  lastFramingTime: 3853.463195885075
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -111.62337, y: 182.00348, z: -193.38042}
+    m_Target: {x: 402.8756, y: 127.25644, z: 241.88126}
     speed: 2
-    m_Value: {x: -111.62337, y: 182.00348, z: -193.38042}
+    m_Value: {x: 402.8756, y: 127.25644, z: 241.88126}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -858,13 +858,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.17019708, y: 0.75365454, z: -0.2146957, w: 0.5974476}
+    m_Target: {x: 0.101646475, y: -0.062133323, z: 0.0063614277, w: 0.992858}
     speed: 2
-    m_Value: {x: 0.17019708, y: 0.75365454, z: -0.2146957, w: 0.5974476}
+    m_Value: {x: 0.101646475, y: -0.062133323, z: 0.0063614277, w: 0.992858}
   m_Size:
-    m_Target: 149.5104
+    m_Target: 904.5335
     speed: 2
-    m_Value: 149.5104
+    m_Value: 904.5335
   m_Ortho:
     m_Target: 0
     speed: 2
